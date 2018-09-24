@@ -20,6 +20,7 @@ npm run build --report
 
 ``` bash
 # 路由
+
 首页：/
 
 详情页：products/id 比如 ：products/1
