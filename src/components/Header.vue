@@ -17,7 +17,9 @@
             <div class="d-flex search">
               <form class="form-inline">
                 <input class="form-control form-control-sm" type="search" placeholder="搜索" aria-label="Search">
-                <button class="btn btn-sm pl-3 pr-3" type="submit">搜索</button>
+                <router-link to="/search">
+                  <button class="btn btn-sm pl-3 pr-3" type="submit">搜索</button>
+                </router-link>
               </form>
             </div>
           </div>

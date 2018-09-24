@@ -45,7 +45,13 @@
           </a>
         </div>
       </div>
-      <div class="" style="width: 200px;background: #FFF"></div>
+      <div class="" style="width: 200px;background: #FFF">
+        <div class="row" style="margin: 0">
+          <div v-for="item in [1,2,3,4,5,6,7,8]" :key="item" class="col-6 mt-2">
+              <img src="https://img.alicdn.com/imgextra/i3/2185948555/O1CN012D4Enlay7wu4dCI_!!2185948555.jpg_430x430q90.jpg" alt="" srcset="" width="100%">
+          </div>
+        </div>
+      </div>
     </div>
     <div class="content-body">
       <div class="item" v-for="item in contentData" :key="item.id">
@@ -124,37 +130,52 @@ export default {
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
 						},
 						{
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
-							pict_url:
-								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
-							small_images: '',
-							pict_url:
-								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
-							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
 						},
@@ -165,46 +186,95 @@ export default {
 					moreUrl: '',
 					wares: [
 						{
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
-							title: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
-						{
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
 							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
 							pict_url:
 								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
-						},
+            },
+            {
+							title: '越南进口 乐享热带甜蜜滋味',
+							small_images: '',
+							zk_final_price: '39.00',
+							coupon_info: '5',
+							original_price: '59.00',
+							volume: '239',
+							pict_url:
+								'https://gd4.alicdn.com/imgextra/i2/2727803226/TB2SfsOEFmWBuNjSspdXXbugXXa_!!2727803226.jpg_310x310.jpg',
+						}
 					],
 				},
 			],

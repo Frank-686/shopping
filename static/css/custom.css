@@ -65,3 +65,7 @@ a, a:focus, a:active, a:hover {
 .breadcrumb-item+.breadcrumb-item::before {
   content: '>'
 }
+
+.bg-tm-red {
+  background-color: #D00204 !important;
+}

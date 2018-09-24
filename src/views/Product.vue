@@ -28,7 +28,8 @@
           <div class="price">
             <div class="float-left">
               <h4>原价：&#65509;14.8</h4>
-              <h2><span>券后价：&#65509;</span>9.8</h2>
+              <h2>
+                <span>券后价：&#65509;</span>9.8</h2>
             </div>
             <div class="float-right text-center">
               <img src="https://gqrcode.alicdn.com/img?type=hv&text=https://s.click.taobao.com/1QlMGMw&h=300&w=300" alt="" srcset=""><br>
@@ -38,7 +39,9 @@
         </div>
         <hr>
         <div class="price-w">
-          已售：2232件 （独享）券后价：<span class="color-red">&#65509;</span><span class="color-red" style="font-size: 30px;font-weight: 600">9.8</span>
+          已售：2232件 （独享）券后价：
+          <span class="color-red">&#65509;</span>
+          <span class="color-red" style="font-size: 30px;font-weight: 600">9.8</span>
         </div>
         <hr>
         <button type="button" class="btn buy">领券购买</button>
@@ -57,12 +60,120 @@
         </ul>
       </div>
     </div>
+    <hr>
+    <div class="boutique mt-4 text-left">
+      <h1 class="label pl-4">精品推荐</h1>
+      <div class="row">
+        <div v-for="item in dataList" :key="item.id" class="col-3">
+          <div class="card">
+            <div class="position-absolute">
+              <label for="" class="zk_final_price">
+                领券{{ item.zk_final_price }}元
+              </label><br>
+              <label for="" class="commission_rate mt-2">
+                分享券{{ item.commission_rate }}元
+              </label>
+            </div>
+            <img class="card-img-top" :src="item.pict_url" alt="Card image cap" width="100%">
+            <div class="card-body">
+              <h4 class="title">
+                {{ item.title }}
+              </h4>
+              <div class="content">
+                <span class="price">&#65509;{{ item.price }}</span>
+                <button class="float-right btn btn-sm btn-danger">立即购买</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
 	data() {
-		return {};
+		return {
+      dataList: [
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        },
+        { 
+          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
+          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
+          price: '9.9',
+          zk_final_price: '44.56',
+          commission_rate: '3.45'
+        }
+      ]
+    };
 	},
 	methods: {
 		name() {},
@@ -135,95 +246,166 @@ a {
 }
 
 .detail .de-wrap .card {
-  width: 100%;
-  margin-top: 5px;
+	width: 100%;
+	margin-top: 5px;
 	border: none;
 	background-color: #f0efef;
 }
 
 .detail .de-wrap .card .price {
-  height: 148px;
-  padding: 10px 18px 10px 18px;
+	height: 148px;
+	padding: 10px 18px 10px 18px;
 }
 
 .detail .de-wrap .card .price img {
-  width: 112px;
-  height: 112px;
+	width: 112px;
+	height: 112px;
 }
 .detail .de-wrap .card .price .color-red {
-  color: #EE3F41;
-  font-weight: 600;
+	color: #ee3f41;
+	font-weight: 600;
 }
 
 .detail .de-wrap .card .price h4 {
-  font-size: 16px;
-  margin-top: 40px;
-  color: #53575C;
+	font-size: 16px;
+	margin-top: 40px;
+	color: #53575c;
 }
 
 .detail .de-wrap .card .price h2 {
-  margin-top: 30px;
-  color: #D00204;
-  font-size: 26px;
+	margin-top: 30px;
+	color: #d00204;
+	font-size: 26px;
 }
 
 .detail .de-wrap .card .price h2 span {
-  font-size: 14px;
+	font-size: 14px;
 }
 
-
 .color-red {
-  color: #D00204;
+	color: #d00204;
 }
 
 .price-w {
-  font-size: 14px;
-  color: #53575C;
+	font-size: 14px;
+	color: #53575c;
 }
 
 button.buy {
-  height: 54px;
-  padding: 0;
-  border-radius: 0;
-  margin-top: 30px;
-  cursor: pointer;
-  line-height: 54px;
-  width: 147px;
-  color: #FCF4F4;
-  font-weight: 600;
-  background-color: #D00204;
-  font-size: 18px;
+	height: 54px;
+	padding: 0;
+	border-radius: 0;
+	margin-top: 30px;
+	cursor: pointer;
+	line-height: 54px;
+	width: 147px;
+	color: #fcf4f4;
+	font-weight: 600;
+	background-color: #d00204;
+	font-size: 18px;
 }
 
 .ald-carousel {
-  vertical-align: top;
-  margin-left: 63px;
-  width: 124px;
+	vertical-align: top;
+	margin-left: 63px;
+	width: 124px;
 }
 
-.ald-carousel .title{
-  line-height: 1px;
-  border-top: 1px solid #bfbfbf;
+.ald-carousel .title {
+	line-height: 1px;
+	border-top: 1px solid #bfbfbf;
 }
 
 .ald-carousel .title span {
-  background-color: #F5F3F3;
-  padding: 0 5px;
+	background-color: #f5f3f3;
+	padding: 0 5px;
 }
 
-
 .ald-carousel ul li {
-  margin-bottom: 20px;
-  position: relative;
+	margin-bottom: 20px;
+	position: relative;
 }
 
 .position-absolute {
-  width: 100%;
-  padding: 6px 0;
-  color: #000;
-  font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.7);
-  bottom: 0;
+	width: 100%;
+	padding: 6px 0;
+	color: #000;
+	font-size: 14px;
+	background-color: rgba(255, 255, 255, 0.7);
+	bottom: 0;
 }
+
+.boutique .label {
+	font-style: italic;
+	color: #d00204;
+	font-size: 26px;
+	font-weight: 600;
+}
+.boutique .col-3 {
+  padding: 0 10px;
+}
+
+.boutique .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.boutique .card {
+  margin-top: 20px;
+  height: 390px;
+  position: relative;
+}
+
+.boutique .title {
+  font-size: 14px;
+  color: #444443;
+  line-height: 1.4;
+}
+
+.boutique .card-body {
+  padding: 10px 20px;
+}
+
+.boutique .price {
+  font-size: 14px;
+}
+
+.boutique .content {
+  margin-top: 25px;
+}
+
+.boutique .content button {
+  padding: 0;
+  width: 75px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.boutique .position-absolute {
+  top: 5px;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  left: 10px;
+}
+
+.boutique .position-absolute label {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 11px;
+  color: #FFF;
+  font-weight: 500;
+  padding: 3px 5px;
+}
+
+.boutique .zk_final_price {
+  background-color: #2196F3;
+}
+
+.boutique .commission_rate {
+  background-color: #d00204;
+}
+
 </style>
 
