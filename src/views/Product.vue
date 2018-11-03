@@ -1,87 +1,133 @@
 <template>
-  <div class="container product pt-3">
-    <div class="potion-title">
-      <label for="" class="float-left" style="font-size: 12px">您现在的位置：</label>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">首页</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">商品详情</li>
-        </ol>
-      </nav>
-    </div>
-    <ul class="step mt-4">
-      <li>通过本站去商家购买</li>
-      <li>券后9.8元下单并支付</li>
-      <li>去淘宝收货</li>
-      <li>会本站领取金币或奖励</li>
-    </ul>
-    <div class="detail">
-      <div class="img">
-        <img src="https://img.alicdn.com/imgextra/i2/710505494/TB2.benCv5TBuNjSspcXXbnGFXa_!!710505494.jpg" alt="" width="100%">
+<div>
+    <header>
+      <loading :active.sync="isLoading" :can-cancel="true" color="#e3004d" :is-full-page="true"></loading>
+      <div class="top-header">
+        <p>
+          {{ config.welcome }}
+        </p>
       </div>
-      <div class="de-wrap">
-        <h2>这是商品标题，有点长</h2>
-        <div class="card">
-          <div class="text-center" style="color:#FFf;font-size: 25px;font-weight: 600;heigth: 40px;background: #E3004D;width: 100%;padding: 10px 0;">天猫优惠券5元</div>
-          <div class="price">
-            <div class="float-left">
-              <h4>原价：&#65509;14.8</h4>
-              <h2>
-                <span>券后价：&#65509;</span>9.8</h2>
-            </div>
-            <div class="float-right text-center">
-              <img src="https://gqrcode.alicdn.com/img?type=hv&text=https://s.click.taobao.com/1QlMGMw&h=300&w=300" alt="" srcset=""><br>
-              <span class="color-red">手机扫一扫购买</span>
+      <div class="container" style="position: relative;height: 168px;">
+        <div class="row">
+          <div class="col-6 text-left mt-4">
+            <router-link to="/">
+              <img class="" :src="config.logo" width="180px" alt="logo">
+            </router-link>
+          </div>
+          <div class="col-6 mt-5">
+            <div class="d-flex search">
+              <form class="form-inline">
+                <input class="form-control form-control-sm" type="search" v-model="seachWord" placeholder="搜索" aria-label="Search">
+                <router-link :to="{ path: '/search', query: { 'seachWord': seachWord } }">
+                  <button class="btn btn-sm pl-3 pr-3" type="submit">搜索</button>
+                </router-link>
+              </form>
             </div>
           </div>
         </div>
-        <hr>
-        <div class="price-w">
-          已售：2232件 （独享）券后价：
-          <span class="color-red">&#65509;</span>
-          <span class="color-red" style="font-size: 30px;font-weight: 600">9.8</span>
+        <div class="row menu">
+          <div class="col">
+            <button v-if="$route.path == '/'" class="btn btn-sm btn-default all-categories">所有分类</button>
+            <ul class="">
+              <li v-for="item in topMenus" :key="item.id">
+                <router-link :to="{ path: '/sift', query: { top: item.bShow } }">
+                  {{ item.bShow }}
+                </router-link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <hr>
-        <button type="button" class="btn buy">领券购买</button>
       </div>
-      <div class="ald-carousel">
-        <div class="text-center title">
-          <span>大家都在抢</span>
+    </header>
+    <div class="container product pt-3">
+      <div class="potion-title">
+        <label for="" class="float-left" style="font-size: 12px">您现在的位置：</label>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <router-link to="/">
+              首页
+              </router-link>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">商品详情</li>
+          </ol>
+        </nav>
+      </div>
+      <ul class="step mt-4">
+        <li>通过本站去商家购买</li>
+        <li>券后9.8元下单并支付</li>
+        <li>去淘宝收货</li>
+        <li>会本站领取金币或奖励</li>
+      </ul>
+      <div class="detail">
+        <div class="img">
+          <img :src="product.pict_url" alt="" width="100%">
         </div>
-        <ul class="mt-4">
-          <li v-for="item in [1,2,3]" :key="item" class="text-center">
-            <img src="https://img.alicdn.com/bao/uploaded/i3/TB18iy5NpXXXXbbXpXXXXXXXXXX_!!0-item_pic.jpg_300x300.jpg" alt="" width="100%">
-            <div class="position-absolute">
-              优惠券：19
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <hr>
-    <div class="boutique mt-4 text-left">
-      <h1 class="label pl-4">精品推荐</h1>
-      <div class="row">
-        <div v-for="item in dataList" :key="item.id" class="col-3">
+        <div class="de-wrap">
+          <!-- <pre>{{ product }}</pre> -->
+          <h2>{{ product.title }}</h2>
           <div class="card">
-            <div class="position-absolute">
-              <label for="" class="zk_final_price">
-                领券{{ item.zk_final_price }}元
-              </label><br>
-              <label for="" class="commission_rate mt-2">
-                分享券{{ item.commission_rate }}元
-              </label>
+            <div class="text-center" style="color:#FFf;font-size: 25px;font-weight: 600;heigth: 40px;background: #E3004D;width: 100%;padding: 10px 0;">{{ product.coupon_info }}</div>
+            <div class="price">
+              <div class="float-left">
+                <!-- <h4>原价：&#65509;14.8</h4> -->
+                <h2>
+                  <span>券后价：&#65509;</span>{{ product.zk_final_price }}</h2>
+              </div>
+              <div class="float-right text-center">
+                <div id="qrcode" ref="qrcode"></div>
+                <span class="color-red mt-2">手机扫一扫购买</span>
+              </div>
             </div>
-            <img class="card-img-top" :src="item.pict_url" alt="Card image cap" width="100%">
-            <div class="card-body">
-              <h4 class="title">
-                {{ item.title }}
-              </h4>
-              <div class="content">
-                <span class="price">&#65509;{{ item.price }}</span>
-                <button class="float-right btn btn-sm btn-danger">立即购买</button>
+          </div>
+          <hr>
+          <div class="price-w">
+            已售：{{ product.volume }}件 （独享）券后价：
+            <span class="color-red">&#65509;</span>
+            <span class="color-red" style="font-size: 30px;font-weight: 600">{{ product.zk_final_price }}</span>
+          </div>
+          <hr>
+          <a :href="product.coupon_click_url" target="_blank">
+            <button type="button" class="btn buy">领券购买</button>
+          </a>
+        </div>
+        <div class="ald-carousel">
+          <div class="text-center title">
+            <span>大家都在抢</span>
+          </div>
+          <ul class="mt-4">
+            <li v-for="(item, index) in productArray" :key="index" @click="url = item.click_url">
+              <img :src="item.pict_url" alt="" width="100%">
+              <div class="position-absolute">
+                {{ item.coupon_info }}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="boutique mt-4 text-left">
+        <h1 class="label pl-4">精品推荐</h1>
+        <div class="row">
+          <div v-for="item in dataList" :key="item.id" class="col-3">
+            <div class="card" @click="url = item.click_url">
+              <div class="position-absolute">
+                <label for="" class="zk_final_price">
+                  领券{{ item.zk_final_price }}元
+                </label><br>
+                <label for="" class="commission_rate mt-2">
+                  分享券{{ item.commission_rate }}元
+                </label>
+              </div>
+              <img class="card-img-top" :src="item.pict_url" alt="Card image cap" width="100%">
+              <div class="card-body">
+                <h4 class="title">
+                  {{ item.title }}
+                </h4>
+                <div class="content">
+                  <span class="price">&#65509;{{ item.zk_final_price }}</span>
+                  <button class="float-right btn btn-sm btn-danger">立即购买</button>
+                </div>
               </div>
             </div>
           </div>
@@ -91,93 +137,103 @@
   </div>
 </template>
 <script>
+import Footer from '../components/Footer.vue';
+import Loading from 'vue-loading-overlay';
+import QRCode from 'qrcodejs2'
+
 export default {
+  components: {
+    'app-footer': Footer,
+    Loading
+	},
 	data() {
 		return {
-      dataList: [
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        },
-        { 
-          title: 'CacheCache秋新款chic韩版减龄甜美卡通休闲简约舒适短袖T恤女潮', 
-          pict_url: 'https://img.alicdn.com/bao/uploaded/TB1uvaQdCBYBeNjy0FeXXbnmFXa_!!0-item_pic.jpg_240x240.jpg',
-          price: '9.9',
-          zk_final_price: '44.56',
-          commission_rate: '3.45'
-        }
+      topMenus: [],
+      isLoading: false,
+      config: {},
+      currentPage: '',
+      url: '',
+      product: {},
+      seachWord: '',
+      dataList: [],
+      productArray: [
+        { pict_url: '', coupon_info: '' },
+        { pict_url: '', coupon_info: '' },
+        { pict_url: '', coupon_info: '' }
       ]
     };
-	},
+  },
+  created () {
+    this.url = this.$route.query.url
+    this.getProjectDetail(this.url)
+    this.getTopMenu()
+    this.getConfig()
+  },
 	methods: {
-		name() {},
-	},
+    // 随机显示右边推荐
+    rnd () {
+      return Math.floor(Math.random()*(49-0+1)+0)
+    },
+    // 生成二维码
+    qrcode(url) {
+      let qrcode = null
+      this.$refs.qrcode.innerHTML = ""
+      qrcode = new QRCode('qrcode', {  
+        width: 100,  
+        height: 100, // 高度  
+        text: url, // 二维码内容
+      })
+    },
+		getTopMenu () {
+      this.$axios.post('homePage/topMenu?url=www.test.com').then((response)=> {
+        this.topMenus = response.data.data
+        this.topSeachWord = response.data.data[2].bShow
+      })
+    },
+    // 获取配置信息
+    getConfig () {
+      this.$axios.post('homePage/config?url=www.test.com').then((response)=>{
+        this.config = response.data.data
+      })
+    },
+    getCaption (obj){
+        var index=obj.lastIndexOf("\=");
+        obj=obj.substring(index+1,obj.length);
+        return obj;
+    },
+    getProjectDetail (url) {
+      var surl = this.getCaption(url)
+      var array = surl.split('\\')
+      this.getCenterData(array[2], array[3])
+      let params = new URLSearchParams()
+      params.append('fileUrl', surl)
+      this.$axios.post('homePage/goodsDetails', params).then((response)=>{
+        this.product = response.data.data.tbk_dg_item_coupon_get_response.results.tbk_coupon[0]
+        this.qrcode(this.product.item_url)
+      })
+    },
+     // 获取中间数据
+    getCenterData (topSeachWord, leftSeachWord) {
+      this.isLoading = true
+      let params = new URLSearchParams()
+      params.append("top", topSeachWord)
+      params.append("left", leftSeachWord)
+      var self = this
+      this.$axios.post('homePage/centerData?url=www.test.com&page=1'+ this.currentPage +'&size=50', params).then((response)=>{
+        this.isLoading = false
+        this.dataList = response.data.data[0].wares
+        this.productArray[0] = self.dataList[self.rnd()]
+        this.productArray[1] = self.dataList[self.rnd()]
+        this.productArray[2] = self.dataList[self.rnd()]
+        window.scroll(0, 0);
+      })
+    }
+  },
+  watch: {
+    url (val) {
+      this.getProjectDetail(val)
+    }
+  }
 };
 </script>
 
@@ -213,6 +269,10 @@ a {
 	font-size: 12px;
 }
 
+#qrcode {
+  margin-bottom: 10px;
+}
+
 .detail {
 	text-align: left;
 	margin-top: 32px;
@@ -220,7 +280,6 @@ a {
 
 .detail .img {
 	width: 440px;
-	height: 440px;
 	vertical-align: top;
 }
 
@@ -246,7 +305,8 @@ a {
 }
 
 .detail .de-wrap .card {
-	width: 100%;
+  width: 100%;
+  cursor: pointer;
 	margin-top: 5px;
 	border: none;
 	background-color: #f0efef;
@@ -255,6 +315,12 @@ a {
 .detail .de-wrap .card .price {
 	height: 148px;
 	padding: 10px 18px 10px 18px;
+}
+
+.card-img-top {
+  width: 283px;
+  height: 283px;
+  overflow: hidden;
 }
 
 .detail .de-wrap .card .price img {
@@ -322,7 +388,8 @@ button.buy {
 }
 
 .ald-carousel ul li {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
 	position: relative;
 }
 
@@ -352,12 +419,18 @@ button.buy {
 
 .boutique .card {
   margin-top: 20px;
+  cursor: pointer;
   height: 390px;
   position: relative;
 }
 
 .boutique .title {
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   color: #444443;
   line-height: 1.4;
 }

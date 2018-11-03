@@ -7,6 +7,16 @@ import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
 import '../static/css/custom.css'
+import Qs from 'qs'
+import http from './http.js'
+
+import Message from 'vue-m-message'
+
+Vue.use(Message)
+ 
+Vue.prototype.$axios = http;
+Vue.prototype.qs = Qs;
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

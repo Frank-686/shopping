@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import indexView from '@/views/Index'
 import ProductView from '@/views/Product'
 import SearchView from '@/views/Search'
+import NotFound from '@/views/NotFound'
+import SiftView from '@/views/Sift'
 
 Vue.use(Router)
 
@@ -17,8 +19,10 @@ var router = new Router({
   mode: 'history',
   routes: [
     { path: '/', name: 'index', component: indexView },
-    { path: '/products/:id', component: ProductView },
+    { path: '/detail', component: ProductView },
     { path: '/search', component: SearchView },
+    { path: '/sift', component: SiftView },
+    { path:'*',component: NotFound }
   ]
 })
 

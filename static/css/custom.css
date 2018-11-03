@@ -69,3 +69,82 @@ a, a:focus, a:active, a:hover {
 .bg-tm-red {
   background-color: #D00204 !important;
 }
+
+.m-message {
+  margin-top: 55px !important;
+}
+
+/* 头部样式 */
+header {
+	height: 200px;
+	border-bottom: 2px solid #e3004d;
+}
+.top-header {
+	letter-spacing: 0.9rem;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #fff;
+	font-weight: 600;
+	background: -webkit-linear-gradient(left, #dd664a, #d94748); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, #dd664a, #d94748); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, #dd664a, #d94748); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to right, #dd664a, #d94748); /* 标准的语法（必须放在最后） */
+}
+
+.d-flex {
+	justify-content: flex-end;
+}
+
+.search input {
+	width: 300px !important;
+	line-height: 20px;
+	border-width: 1px;
+	border-color: #E3004D;
+	border-radius: 0;
+}
+
+.search button {
+	border-radius: 0;
+	border-width: 1px;
+	border-color: #E3004D;
+	color: #fff;
+	font-weight: 600;
+	background-color: #E3004D;
+}
+
+.menu {
+	position: absolute;
+	height: 40px;
+	bottom: 0;
+}
+
+.menu ul {
+	padding-top: 10px;
+	display: inline-flex;
+	justify-content: center;
+}
+
+li.active a {
+  color: #E3004D;
+}
+
+.menu ul li {
+	margin-right: 40px;
+	color: #010101;
+	font-size: 18px;
+}
+
+.all-categories {
+	padding-bottom: 0;
+	padding-top: 5px;
+	height: 40px;
+	font-size: 18px;
+	margin-right: 40px;
+	width: 200px;
+	margin-top: 0px;
+	color: #fff;
+	background-color: #e3004d;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}

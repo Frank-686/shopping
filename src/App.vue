@@ -1,23 +1,14 @@
 <template>
   <div id="app">
     <div class="warp">
-      <app-header></app-header>
       <router-view/>
-      <app-footer></app-footer>
     </div>
   </div>
 </template>
-
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
 
 export default {
-	name: 'App',
-	components: {
-		'app-header': Header,
-		'app-footer': Footer,
-	},
+	name: 'App'
 };
 </script>
 

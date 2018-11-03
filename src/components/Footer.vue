@@ -2,25 +2,51 @@
   <footer class="footer">
     <div class="container">
       <ul class="text-center">
-        <li>百度</li>
-        <li>阿里云</li>
-        <li>腾讯云</li>
-        <li>搜狗</li>
-        <li>360搜索</li>
-        <li>淘宝联盟</li>
-        <li>品诺官网</li>
+        <li v-for="link in friendLink" :key="link.id">
+          {{ link.bShow }}
+        </li>
       </ul>
       <p class="mt-3">
-        <a href="">关于我们</a>
-        <a href="">关于我们</a>
-        <a href="">关于我们</a>
-        <a href="">关于我们</a>
-        <a href="">关于我们</a>
+        <a href="#">关于我们</a>
+        <a href="#">联系我们</a>
+        <a href="#">广告合作</a>
+        <a href="#">商务合作</a>
+        <a href="#">友情链接</a>
       </p>
-      <p class="mt-2">@品诺商城 京ICP备11007961号-1 <span class="ml-2">京公网安备110105018822</span></p>
+      <p class="mt-2 text-center">{{ config.record }}</p>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      friendLink: [],
+      config: ''
+    }
+  },
+  created () {
+    this.getFriendLink()
+    this.getConfig()
+  },
+  methods: {
+    getFriendLink() {
+      this.$axios.post('homePage/friendLink?url=www.test.com').then((response)=>{
+        this.friendLink = response.data.data
+      })
+    },
+    // 获取配置信息
+    getConfig () {
+      this.$axios.post('homePage/config?url=www.test.com').then((response)=>{
+        this.config = response.data.data
+      })
+    }
+  },
+}
+</script>
+
+
 
 <style scoped>
 .footer {
@@ -57,8 +83,10 @@ ul li:last-child {
 }
 
 p {
-  width: 450px;
-  text-align: left;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
   margin:  0 auto;
 }
 </style>
