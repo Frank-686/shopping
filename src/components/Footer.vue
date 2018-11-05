@@ -3,7 +3,9 @@
     <div class="container">
       <ul class="text-center">
         <li v-for="link in friendLink" :key="link.id">
-          {{ link.bShow }}
+          <a :href="link.url" target="_blank" rel="noopener noreferrer">
+            {{ link.bShow }}
+          </a>
         </li>
       </ul>
       <p class="mt-3">

@@ -30,9 +30,14 @@
                   首页
                 </router-link>
               </li>
-              <li v-for="item in topMenus" :key="item.id" @click="keyWord = item.bShow" :class="topSeachWord == item.bShow ? 'active' : ''">
-                <a @click="key = item.bShow" :class="{'color-red': key == item.bShow }">{{ item.bShow }}</a>
+              <li v-for="item in topMenus" :key="item.id">
+                <router-link :to="{ path: '/sift', query: { top: item.bShow } }">
+                  {{ item.bShow }}
+                </router-link>
               </li>
+              <!-- <li v-for="item in topMenus" :key="item.id" @click="keyWord = item.bShow" :class="topSeachWord == item.bShow ? 'active' : ''">
+                <a @click="key = item.bShow" :class="{'color-red': key == item.bShow }">{{ item.bShow }}</a>
+              </li> -->
             </ul>
           </div>
         </div>

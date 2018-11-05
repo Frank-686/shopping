@@ -167,7 +167,6 @@ export default {
       })
     },
     setCount () {
-      console.log(this.topMenus);
       if (this.topSeachWord == '' && this.leftSeachWord == '') {
         this.count = this.topMenus.length * this.pageSize
       }

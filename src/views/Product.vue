@@ -29,6 +29,11 @@
           <div class="col">
             <button v-if="$route.path == '/'" class="btn btn-sm btn-default all-categories">所有分类</button>
             <ul class="">
+              <li>
+                <router-link to="/">
+                  首页
+                </router-link>
+              </li>
               <li v-for="item in topMenus" :key="item.id">
                 <router-link :to="{ path: '/sift', query: { top: item.bShow } }">
                   {{ item.bShow }}
@@ -53,12 +58,6 @@
           </ol>
         </nav>
       </div>
-      <ul class="step mt-4">
-        <li>通过本站去商家购买</li>
-        <li>券后9.8元下单并支付</li>
-        <li>去淘宝收货</li>
-        <li>会本站领取金币或奖励</li>
-      </ul>
       <div class="detail">
         <div class="img">
           <img :src="product.pict_url" alt="" width="100%">
@@ -134,6 +133,8 @@
         </div>
       </div>
     </div>
+    <!-- 网页底部 -->
+    <app-footer></app-footer>
   </div>
 </template>
 <script>

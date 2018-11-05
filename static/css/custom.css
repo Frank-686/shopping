@@ -2,149 +2,249 @@
    v2.0 | 20110126
    License: none (public domain)
 */
- 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-  line-height: 1;
-  background-color: #F5F3F3;
-  min-width: 1366px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-a, a:focus, a:active, a:hover {
-  text-decoration: none;
-  color: #4b4c59;
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: #F5F3F3;
+    min-width: 1366px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a,
+a:focus,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: #4b4c59;
 }
 
 .container {
-  width: 1200px !important;
-  min-width: 1200px;
-  padding-left: 0;
-  padding-right: 0;
+    width: 1200px !important;
+    min-width: 1200px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
-  content: '>'
+    content: '>'
 }
 
 .bg-tm-red {
-  background-color: #D00204 !important;
+    background-color: #D00204 !important;
 }
 
 .m-message {
-  margin-top: 55px !important;
+    margin-top: 55px !important;
 }
 
+
 /* 头部样式 */
+
 header {
-	height: 200px;
-	border-bottom: 2px solid #e3004d;
+    height: 200px;
+    border-bottom: 2px solid #e3004d;
 }
+
 .top-header {
-	letter-spacing: 0.9rem;
-	height: 30px;
-	line-height: 30px;
-	font-size: 14px;
-	color: #fff;
-	font-weight: 600;
-	background: -webkit-linear-gradient(left, #dd664a, #d94748); /* Safari 5.1 - 6.0 */
-	background: -o-linear-gradient(right, #dd664a, #d94748); /* Opera 11.1 - 12.0 */
-	background: -moz-linear-gradient(right, #dd664a, #d94748); /* Firefox 3.6 - 15 */
-	background: linear-gradient(to right, #dd664a, #d94748); /* 标准的语法（必须放在最后） */
+    letter-spacing: 0.9rem;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    background: -webkit-linear-gradient(left, #dd664a, #d94748);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #dd664a, #d94748);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #dd664a, #d94748);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #dd664a, #d94748);
+    /* 标准的语法（必须放在最后） */
 }
 
 .d-flex {
-	justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .search input {
-	width: 300px !important;
-	line-height: 20px;
-	border-width: 1px;
-	border-color: #E3004D;
-	border-radius: 0;
+    width: 300px !important;
+    line-height: 20px;
+    border-width: 1px;
+    border-color: #E3004D;
+    border-radius: 0;
 }
 
 .search button {
-	border-radius: 0;
-	border-width: 1px;
-	border-color: #E3004D;
-	color: #fff;
-	font-weight: 600;
-	background-color: #E3004D;
+    border-radius: 0;
+    border-width: 1px;
+    border-color: #E3004D;
+    color: #fff;
+    font-weight: 600;
+    background-color: #E3004D;
 }
 
 .menu {
-	position: absolute;
-	height: 40px;
-	bottom: 0;
+    position: absolute;
+    height: 40px;
+    bottom: 0;
 }
 
 .menu ul {
-	padding-top: 10px;
-	display: inline-flex;
-	justify-content: center;
+    padding-top: 10px;
+    display: inline-flex;
+    justify-content: center;
 }
 
 li.active a {
-  color: #E3004D;
+    color: #E3004D;
 }
 
 .menu ul li {
-	margin-right: 40px;
-	color: #010101;
-	font-size: 18px;
+    margin-right: 40px;
+    color: #010101;
+    font-size: 18px;
 }
 
 .all-categories {
-	padding-bottom: 0;
-	padding-top: 5px;
-	height: 40px;
-	font-size: 18px;
-	margin-right: 40px;
-	width: 200px;
-	margin-top: 0px;
-	color: #fff;
-	background-color: #e3004d;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
+    padding-bottom: 0;
+    padding-top: 5px;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 40px;
+    width: 200px;
+    margin-top: 0px;
+    color: #fff;
+    background-color: #e3004d;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }

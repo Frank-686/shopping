@@ -9,21 +9,22 @@ import SiftView from '@/views/Sift'
 Vue.use(Router)
 
 var router = new Router({
-  scrollBehavior (to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
-  },
-  mode: 'history',
-  routes: [
-    { path: '/', name: 'index', component: indexView },
-    { path: '/detail', component: ProductView },
-    { path: '/search', component: SearchView },
-    { path: '/sift', component: SiftView },
-    { path:'*',component: NotFound }
-  ]
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return { x: 0, y: 0 }
+        }
+    },
+    // mode: 'history',
+    base: '/dist/',
+    routes: [
+        { path: '/', name: 'index', component: indexView },
+        { path: '/detail', component: ProductView },
+        { path: '/search', component: SearchView },
+        { path: '/sift', component: SiftView },
+        { path: '*', component: NotFound }
+    ]
 })
 
 export default router

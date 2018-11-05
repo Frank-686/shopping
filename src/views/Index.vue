@@ -63,7 +63,9 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item" v-for="item in scrollbarImages" :class="item.id == 1 ? 'active' : ''" :key="item.id">
-              <img class="d-block w-100" :src="item.bShow" :alt="item.id">
+              <a :href="item.url" target="_blank">
+                <img class="d-block w-100" :src="item.bShow" :alt="item.id">
+              </a>
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
